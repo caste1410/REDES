@@ -1,3 +1,5 @@
+const http = require('http');
+
 function getCurrentTime() {
   var date = new Date();
   var hours = date.getHours();
@@ -22,5 +24,14 @@ function setFormat() {
   localTime.textContent = "Hora local: " + formatHour();
 }
 
+function getDataFromServer() {
+  http.get('http://localhost:8080', res =>{
+    res.on('data', data => {
+      console.log(data);
+    });
+});
+
+}
+getDataFromServer();
 setFormat();
 setInterval(setFormat, 1000);
