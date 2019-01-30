@@ -1,15 +1,13 @@
-const http = require('http');
-
-function getCurrentTime() {
-  var date = new Date();
+//var http = require('http');
+function getCurrentTime(date) {
   var hours = date.getHours();
   var minutes = date.getMinutes();
   var seconds = date.getSeconds();
   return [hours, minutes, seconds];
 }
 
-function formatHour() {
-  var time = getCurrentTime();
+function formatHour(actualTime) {
+  var time = getCurrentTime(actualTime);
   var format = time[2] % 2 == 0 ? addDigit(time[0]) + ":" + addDigit(time[1]) :
     addDigit(time[0]) + " " + addDigit(time[1]);
   return format;
@@ -20,18 +18,29 @@ function addDigit(value) {
   return newValue;
 }
 
-function setFormat() {
-  localTime.textContent = "Hora local: " + formatHour();
+function setFormatLocal() {
+  var date = new Date();
+  localTime.textContent = "Hora local: " + formatHour(date);
+}
+
+function setFormatServer(serverDate){
+  serverTime.textContent = "Hora Server: " + formatHour(serverDate);
 }
 
 function getDataFromServer() {
-  http.get('http://localhost:8080', res =>{
-    res.on('data', data => {
-      console.log(data);
-    });
-});
+  fetch('http://localhost:8080/')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    var date = new Date(myJson);
+    setFormatServer(date);
+  });
 
 }
-getDataFromServer();
-setFormat();
-setInterval(setFormat, 1000);
+function displayHours(){
+  setFormatLocal();
+  getDataFromServer();
+}
+displayHours();
+setInterval(displayHours, 1000);
