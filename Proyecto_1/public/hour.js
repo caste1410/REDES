@@ -19,11 +19,11 @@ function addDigit(value) {
 
 function setFormatLocal() {
   var date = new Date();
-  localTime.textContent = "Hora local: " + formatHour(date);
+  localTime.textContent =formatHour(date);
 }
 
 function setFormatServer(serverDate){
-  serverTime.textContent = "Hora Server: " + formatHour(serverDate);
+  serverTime.textContent = formatHour(serverDate);
 }
 
 function getDataFromServer() {

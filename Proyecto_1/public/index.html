@@ -9,12 +9,18 @@
 </head>
 
 <body>
-  <ul>
-    <h1 id="localTime"></h1>
-    <script type="text/javascript" src="hour.js"></script>
-
-    <h1 id="serverTime"></h1>
-  </ul>
+  <video autoplay muted loop id="myVideo">
+    <source src="./media/background.mp4" type="video/mp4">
+  </video>
+  <div class="localTime">
+    <h1>Hora Local</h1>
+    <h2 id="localTime"></h2>
+  </div>
+  <div class="serverTime">
+    <h1>Hora Server</h1>
+    <h2 id="serverTime"></h2>
+  </div>
+  <script type="text/javascript" src="hour.js"></script>
 </body>
 
 </html>
