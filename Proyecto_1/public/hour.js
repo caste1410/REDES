@@ -1,4 +1,3 @@
-//var http = require('http');
 function getCurrentTime(date) {
   var hours = date.getHours();
   var minutes = date.getMinutes();
@@ -36,7 +35,6 @@ function getDataFromServer() {
     var date = new Date(myJson);
     setFormatServer(date);
   });
-
 }
 function displayHours(){
   setFormatLocal();
