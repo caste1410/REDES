@@ -1,24 +1,20 @@
 .localTime {
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
-  width: 25%;
-  padding: 20px;
+  left: 20%;
 }
 .serverTime {
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
-  width: 25%;
-  padding: 20px;
+  right: 20%;
 }
-div{
+.serverTime, .localTime{
   font-family: 'IBM Plex Mono', monospace;
   text-align: center;
   position:  fixed;
-  font-size: 40px;
+  font-size: auto;
+  background: rgba(143, 158, 180, 0.5);
+  color: #272C32;
+  width: 25%;
+  padding: 30px;
+  bottom: 45%;
 }
-
 
 #myVideo {
   position: fixed;

@@ -40,5 +40,6 @@ function displayHours(){
   setFormatLocal();
   getDataFromServer();
 }
+
 displayHours();
 setInterval(displayHours, 1000);
