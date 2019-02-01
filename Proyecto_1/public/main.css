@@ -1,19 +1,21 @@
 .localTime {
-  left: 20%;
+  left: 25%;
 }
 .serverTime {
-  right: 20%;
+  right: 25%;
 }
 .serverTime, .localTime{
+  display: inline-block;
   font-family: 'IBM Plex Mono', monospace;
   text-align: center;
   position:  fixed;
   font-size: auto;
   background: rgba(143, 158, 180, 0.5);
   color: #272C32;
-  width: 25%;
+  width: 20%;
   padding: 30px;
-  bottom: 45%;
+  bottom: 43%;
+
 }
 
 #myVideo {
