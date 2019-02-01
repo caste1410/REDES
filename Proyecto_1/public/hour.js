@@ -30,8 +30,8 @@ function addDigit(value) {
 * a la función formatHour() y asignando el valor
 * al elemento de html localTime*/
 function setFormatLocal() {
-  var date = new Date();
-  localTime.textContent =formatHour(date);
+  var localDate = new Date();
+  localTime.textContent =formatHour(localDate);
 }
 
 /* setFormatServer agrega la hora en el formato de formatHour
